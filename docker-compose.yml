@@ -11,6 +11,8 @@ services:
       - "${HTTP_PORT}:3000"
     depends_on:
       - database
+    environment:
+      DATABASE_URL: "postgres://postgres:${DATABASE_PASSWORD}@database:5432/postgres"
 
   database:
     image: postgres:12.3
@@ -18,6 +20,8 @@ services:
       - database:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+    ports:
+      - "${DATABASE_PORT}:5432"
 
 volumes:
   database:
