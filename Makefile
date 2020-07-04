@@ -17,7 +17,7 @@ down:
 
 .PHONY: rails rails/*
 rails: .env
-	docker-copmpose run --rm app rails $(CMD)
+	docker-compose run --rm app rails $(CMD)
 
 .PHONY: yarn yarn/*
 yarn: .env
