@@ -1,6 +1,6 @@
 .PHONY: up
 up: .env
-	docker-compose up -d
+	docker-compose up -d --build
 
 .env:
 	cp .env.example .env
